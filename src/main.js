@@ -2,10 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import './vant.js'
 import './styles/index.less'
-import { Button } from 'vant'
 import 'amfe-flexible'
-Vue.use(Button)
 Vue.config.productionTip = false
 
 new Vue({
