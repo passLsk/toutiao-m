@@ -34,10 +34,10 @@ export default {
 </script>
 
 <style scoped lang='less'>
-.toutiao {
+.toutiao[data-v-5d5a9732] {
     font-size: 40px;
 }
-/deep/ .van-tabbar-item__text {
+/deep/ [data-v-5d5a9732] .van-tabbar-item__text {
   font-size: 20px;
 }
 </style>
