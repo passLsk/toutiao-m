@@ -74,7 +74,7 @@ import { getSmsCode, login } from '@/api/use.js' // 导入发送验证码与获�
 export default {
   data () {
     return {
-      mobile: '13911111111', // 手机号
+      mobile: '15088704590', // 手机号13911111111
       code: '246810', // 短信验证码
       time: 6 * 1000, // 验证码倒计时 单位是毫秒
       isCountDownShow: false // 默认倒计时隐藏
