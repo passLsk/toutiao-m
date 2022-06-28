@@ -5,28 +5,28 @@
         <div class="left">
           <van-image
             round
-            src="http://192.168.19.244:8080/#/my/assets/avatar.png"
+            :src="userInfo.photo"
           />
-          <span>黑马头条号</span>
+          <span>{{userInfo.name}}</span>
         </div>
         <div class="button">编辑资料</div>
       </div>
       <ul class="list">
         <li>
-          <p>8</p>
+          <p>{{userInfo.art_count}}</p>
           <p>头条</p>
         </li>
         <li>
-          <p>8</p>
-          <p>头条</p>
+          <p>{{userInfo.fans_count}}</p>
+          <p>粉丝</p>
         </li>
         <li>
-          <p>8</p>
-          <p>头条</p>
+          <p>{{userInfo.follow_count}}</p>
+          <p>关注</p>
         </li>
         <li>
-          <p>8</p>
-          <p>头条</p>
+          <p>{{userInfo.like_count}}</p>
+          <p>点赞</p>
         </li>
       </ul>
     </div>
@@ -65,11 +65,29 @@
 </template>
 
 <script>
+import { getUserInfo } from '@/api/use'
 import { mapState } from 'vuex'
 export default {
-  created () { },
+  name: 'My',
+  async created () {
+    if (this.user && this.user.token) {
+      try {
+        const res = await getUserInfo()
+        this.userInfo = res.data.data
+        console.log('res', res)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    // this.userInfo.art_count = Math.floor(Math.random() * 100000)
+    // this.userInfo.fans_count = Math.floor(Math.random() * 1000000)
+    // this.userInfo.follow_count = Math.floor(Math.random() * 1000000)
+    // this.userInfo.like_count = Math.floor(Math.random() * 100000000)
+  },
   data () {
-    return {}
+    return {
+      userInfo: {}
+    }
   },
   methods: {
     async logout () {
