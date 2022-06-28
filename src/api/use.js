@@ -14,3 +14,8 @@ export const login = ({ mobile, code }) => {
     }
   })
 }
+export const getUserInfo = () => {
+  return request({
+    url: '/user'
+  })
+}
