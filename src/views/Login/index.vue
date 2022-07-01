@@ -84,8 +84,8 @@ export default {
     async onSubmit (values) { // 表单的submit事件函数 形参values对应的是表单内所有的提交内容
       try {
         const res = await login(values)
-        this.$store.commit('setUser', res.data.data) // 请求回来的token保存在vuex的state中
-        this.$router.replace('my')
+        this.$store.commit('setUser', res.data.data) // 请求回来的token保存在vuex的state中的setUser里
+        this.$router.push('my')
         console.log(res)
       } catch (err) {
         console.log(err)

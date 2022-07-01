@@ -1,6 +1,9 @@
 <template>
   <div>
-    <router-view class="main" />
+    <!-- 让首页的组件tab栏选项固定在用户选择项上 没有加这个属性 用户切换组件tab栏会回到默认选项 -->
+    <keep-alive :include="['home']">
+      <router-view class="main" />
+    </keep-alive>
 
     <van-tabbar route>
       <van-tabbar-item  to="/home" icon="home-o">
