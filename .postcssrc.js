@@ -14,7 +14,7 @@ module.exports = {
     // 作用：把 px 转为 rem
     'postcss-pxtorem': {
       rootValue ({ file }) {
-        return file.indexOf('vant') !== -1 ? 37.5 : 75
+        return (file.indexOf('vant') !== -1 || file.indexOf('github-markdown-css') !== -1) ? 37.5 : 75
       },
       propList: ['*']
     }

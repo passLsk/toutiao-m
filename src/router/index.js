@@ -18,7 +18,9 @@ const routes = [
         { path: '/my', name: 'my', component: () => import('@/views/My') }
       ]
   },
-  { path: '/search', name: 'search', component: () => import('@/views/Search') }
+  { path: '/search', name: 'search', component: () => import('@/views/Search') },
+  // params 路由规则配置里设置props值为true 可以实现组件解耦 {{$route.params.article_id}} 简化为 {{article_id}}
+  { path: '/article/:article_id', name: 'article', component: () => import('@/views/Article'), props: true }
 
 ]
 const router = new VueRouter({
